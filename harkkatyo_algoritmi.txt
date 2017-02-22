@@ -1,0 +1,13 @@
+HARKKATYÖ ALGORITMIT
+
+-Rakennettas puurakenteella
+-SQL tietokannassa valmiit haut! NoSQl voi vaikuttaa enemmän. 
+-Toteutuskieli - JS
+-Javascript binary tree 
+-Testidata ??? Syötteenä, JSON, genroisi jonkun määrän arvoja, 10/100/1000/10 000 tuotetta? 
+-Miten hakuaika pitenee kun tuotemäärä kasvaa puussa!
+-Eri nappeja tehokkuiden demoamiseen
+-Laskuri, joka näyttää hakunopeuden!
+
+
+https://danmartensen.svbtle.com/converting-a-tree-to-a-list-in-javascript
