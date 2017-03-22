@@ -59,14 +59,18 @@
 
         <!-- Jumbotron Header -->
         <header class="jumbotron hero-spacer">
-            <h1>Downloading time: 1 sec</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa, ipsam, eligendi, in quo sunt possimus non incidunt odit vero aliquid similique quaerat nam nobis illo aspernatur vitae fugiat numquam repellat.</p>
-            <p><a class="btn btn-primary btn-lg">10 products</a>
-                <a class="btn btn-primary btn-lg">20 products</a>
-                <a class="btn btn-primary btn-lg">100 products</a>
-                <a class="btn btn-primary btn-lg">1000 products</a>
-                <a class="btn btn-primary btn-lg">10 000 products</a>
-            </p>
+            <h1>Downloading time: 1 millisekunttia</h1>
+
+
+            <form id="form">
+                <input id="number" type="number" min="1" name="number">
+                <button>Go</button>
+            </form>
+            <button class="btn btn-primary btn-lg" onclick="tengerms()">10 grems B</button>
+            <button class="btn btn-primary btn-lg" onclick="twentygerms()">20 grems B</button>
+            <button class="btn btn-primary btn-lg" onclick="hundredgerms()">100 grems B</button>
+            <button class="btn btn-primary btn-lg" onclick="thousandgerms()">1000 grems B</button>
+            <button class="btn btn-primary btn-lg" onclick="tenthousandgerms()">10 000 grems Q</button>
         </header>
 
         <hr>
@@ -74,7 +78,7 @@
         <!-- Title -->
         <div class="row">
             <div class="col-lg-12">
-                <h3>Listed products</h3>
+                <h3>Lajittelut</h3>
             </div>
         </div>
         <!-- /.row -->
@@ -82,50 +86,21 @@
         <!-- Page Features -->
         <div class="row text-center">
 
-            <div class="col-md-3 col-sm-6 hero-feature">
+            <div class="col-md-6 col-sm-6 hero-feature">
                 <div class="thumbnail">
                     <div class="caption">
-                        <h3>Feature Label</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                        <p>
-                            <a href="#" class="btn btn-primary">Nice</a> <a href="#" class="btn btn-default">Stuff</a>
-                        </p>
+                        <h3>Kuplalajittelu</h3>
+                        <p id="bubble"></p>
+
                     </div>
                 </div>
             </div>
 
-            <div class="col-md-3 col-sm-6 hero-feature">
+            <div class="col-md-6 col-sm-6 hero-feature">
                 <div class="thumbnail">
                     <div class="caption">
-                        <h3>Feature Label</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                        <p>
-                            <a href="#" class="btn btn-primary">Nice</a> <a href="#" class="btn btn-default">Stuff</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-3 col-sm-6 hero-feature">
-                <div class="thumbnail">
-                    <div class="caption">
-                        <h3>Feature Label</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                        <p>
-                            <a href="#" class="btn btn-primary">Nice</a> <a href="#" class="btn btn-default">Stuff</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-3 col-sm-6 hero-feature">
-                <div class="thumbnail">
-                    <div class="caption">
-                        <h3>Feature Label</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-                        <p>
-                            <a href="#" class="btn btn-primary">Nice</a> <a href="#" class="btn btn-default">Stuff</a>
-                        </p>
+                        <h3>Pikalajittelu</h3>
+                        <p id="quicksort"></p>
                     </div>
                 </div>
             </div>
@@ -153,6 +128,8 @@
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
     <script src="js/binary.tree.js"></script>
+    <script src="js/bubblesort.js"></script>
+    <script src="js/quicksort.js"></script>
 
 </body>
 

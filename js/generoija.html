@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>testi</title>
+
+    <body>
+        <form id="form">
+            <input id="number" type="number" min="1" name="number">
+            <button>Go</button>
+        </form>
+
+        <p id="result"></p>
+        <script>
+            var form = document.getElementById('form');
+            number = document.getElementById('number');
+            form.onsubmit = function (e) {
+                e.preventDefault()
+                var variable = number.value;
+                //   alert( variable );
+
+
+
+                var arr = [];
+                for (var i = 1; i <= variable; i++) {
+                    var x = Math.floor((Math.random() * 100) + 1);
+                    //console.log(x);
+                    arr[i] = x;
+                }
+
+
+                console.log(arr);
+
+
+                //for(var j = 0; j < variable; j++) {
+                //  document.getElementById("result").innerHTML = arr[j];
+                //}
+
+            };
+        </script>
+
+
+
+    </body>
+</head>
+
+</html>
