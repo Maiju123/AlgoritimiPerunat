@@ -1,8 +1,3 @@
-//lajittelija
-
-
-
-
 
 //ensin generoidaan data käyttäjän määrittämän arvon mukaan
 var form = document.getElementById('form');
@@ -10,7 +5,9 @@ var form = document.getElementById('form');
 form.onsubmit = function(e) {
     e.preventDefault()
    var variable = number.value;
-//   alert( variable );   
+//   alert( variable ); 
+    
+//Kuplalajittelun data
 var arr = [];
 for(var i=1; i<=variable; i++) {
      var x = Math.floor((Math.random() * 100) + 1);
@@ -21,23 +18,24 @@ for(var i=1; i<=variable; i++) {
   console.log(arr);
     
 
-//TOINEN TAULUKKO pikalajittelulle
+//Shell-lajittelun data
     var arr2 = [];
 for(var i=1; i<=variable; i++) {
      var x = Math.floor((Math.random() * 100) + 1);
     //console.log(x);
     arr2 [i] = x;
 }
-  
   console.log(arr2);
     
 
+
+      
     
 //KUPLALAJITTELU    
-    
-    
 function bubbleSort(arr)
-{
+{   
+    var start = new Date().getTime();
+    
     var swapped;
     do {
         swapped = false;
@@ -50,39 +48,38 @@ function bubbleSort(arr)
             }
         }
     } while (swapped);
+    var elapsedBubble = new Date().getTime() - start;
+    console.log("bubblesort aika millisekunteina: " + elapsedBubble);
+    document.getElementById("kuplaAika").innerHTML=elapsedBubble;
 }
 
- // PIKALAJITTELU   
-function  quickSort(arr, left, right)
-{
-	var i = left;
-	var j = right;
-	var tmp;
-	pivotidx = (left + right) / 2; 
-	var pivot = parseInt(arr[pivotidx.toFixed()]);  
-	/* partition */
-	while (i <= j)
-	{
-		while (parseInt(arr[i]) < pivot)
-		i++;
-		while (parseInt(arr[j]) > pivot)
-			j--;
-		if (i <= j)
-		{
-			tmp = arr[i];
-			arr[i] = arr[j];
-			arr[j] = tmp;
-			i++;
-			j--;
-		}
-	}
-
-	/* recursion */
-	if (left < j)
-		quickSort(arr, left, j);
-	if (i < right)
-		quickSort(arr, i, right);
-	return arr;
+ // Shell lajittelu
+function shellSort(arr) {
+    var start = new Date().getTime();
+    var increment = arr.length / 2;
+    while (increment > 0) {
+        for (i = increment; i < arr.length; i++) {
+            var j = i;
+            var temp = arr[i];
+    
+            while (j >= increment && arr[j-increment] > temp) {
+                arr[j] = arr[j-increment];
+                j = j - increment;
+            }
+    
+            arr[j] = temp;
+        }
+    
+        if (increment == 2) {
+            increment = 1;
+        } else {
+            increment = parseInt(increment*5 / 11);
+        }
+    }
+    var elapsedShell = new Date().getTime() - start;
+    console.log("Shell sort aika millisekunteina: " + elapsedShell);
+    document.getElementById("shellAika").innerHTML=elapsedShell;
+  return arr;  
 }
     
     
@@ -90,7 +87,7 @@ function  quickSort(arr, left, right)
  
 bubbleSort(arr);
 console.log(arr); 
-quickSort(arr2);
+shellSort(arr2)
 console.log(arr2); 
     
     
