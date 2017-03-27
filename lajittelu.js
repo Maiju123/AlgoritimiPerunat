@@ -20,21 +20,79 @@ for(var i=1; i<=variable; i++) {
   
   console.log(arr);
     
+
+//TOINEN TAULUKKO pikalajittelulle
+    var arr2 = [];
+for(var i=1; i<=variable; i++) {
+     var x = Math.floor((Math.random() * 100) + 1);
+    //console.log(x);
+    arr2 [i] = x;
+}
+  
+  console.log(arr2);
     
-    //bubble
-function bubbleSort(arr) {
-    var len = arr.length;
-    for (var i = len - 1; i >= 0; i--) {
-        for (var j = 1; j <= i; j++) {
-            if (arr[j - 1] > arr[j]) {
-                var temp = arr[j - 1];
-                arr[j - 1] = arr[j];
-                arr[j] = temp;
+
+    
+//KUPLALAJITTELU    
+    
+    
+function bubbleSort(arr)
+{
+    var swapped;
+    do {
+        swapped = false;
+        for (var i=0; i < arr.length-1; i++) {
+            if (arr[i] > arr[i+1]) {
+                var temp = arr[i];
+                arr[i] = arr[i+1];
+                arr[i+1] = temp;
+                swapped = true;
             }
         }
-    }
-     console.log(arr);
-    return arr;
-   
-};
+    } while (swapped);
+}
+
+ // PIKALAJITTELU   
+function  quickSort(arr, left, right)
+{
+	var i = left;
+	var j = right;
+	var tmp;
+	pivotidx = (left + right) / 2; 
+	var pivot = parseInt(arr[pivotidx.toFixed()]);  
+	/* partition */
+	while (i <= j)
+	{
+		while (parseInt(arr[i]) < pivot)
+		i++;
+		while (parseInt(arr[j]) > pivot)
+			j--;
+		if (i <= j)
+		{
+			tmp = arr[i];
+			arr[i] = arr[j];
+			arr[j] = tmp;
+			i++;
+			j--;
+		}
+	}
+
+	/* recursion */
+	if (left < j)
+		quickSort(arr, left, j);
+	if (i < right)
+		quickSort(arr, i, right);
+	return arr;
+}
+    
+    
+    
+ 
+bubbleSort(arr);
+console.log(arr); 
+quickSort(arr2);
+console.log(arr2); 
+    
+    
+    
 }
